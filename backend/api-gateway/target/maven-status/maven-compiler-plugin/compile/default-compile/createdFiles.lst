@@ -1,3 +1,0 @@
-com/interviewportal/gateway/ApiGatewayApplication.class
-com/interviewportal/gateway/filter/AuthenticationGatewayFilter.class
-com/interviewportal/gateway/config/JwtServiceConfig.class

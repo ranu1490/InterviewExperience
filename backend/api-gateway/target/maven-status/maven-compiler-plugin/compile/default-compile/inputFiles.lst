@@ -1,3 +1,0 @@
-/workspace/backend/api-gateway/src/main/java/com/interviewportal/gateway/ApiGatewayApplication.java
-/workspace/backend/api-gateway/src/main/java/com/interviewportal/gateway/config/JwtServiceConfig.java
-/workspace/backend/api-gateway/src/main/java/com/interviewportal/gateway/filter/AuthenticationGatewayFilter.java

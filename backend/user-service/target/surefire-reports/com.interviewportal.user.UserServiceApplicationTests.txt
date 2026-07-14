@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.interviewportal.user.UserServiceApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.602 s -- in com.interviewportal.user.UserServiceApplicationTests
