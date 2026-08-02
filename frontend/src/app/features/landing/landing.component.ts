@@ -6,6 +6,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { InterviewSummary } from '../../core/models/interview.model';
+import { AuthService } from '../../core/services/auth.service';
 import { InterviewService } from '../../core/services/interview.service';
 
 /** Marketing landing page with a hero and the latest interview experiences. */
@@ -28,7 +29,9 @@ import { InterviewService } from '../../core/services/interview.service';
       </p>
       <div class="hero-actions">
         <a mat-raised-button color="primary" routerLink="/interviews">Browse experiences</a>
-        <a mat-stroked-button routerLink="/signup">Share yours</a>
+        @if (!auth.isAuthenticated()) {
+          <a mat-stroked-button routerLink="/signup">Share yours</a>
+        }
       </div>
     </section>
 
@@ -159,6 +162,7 @@ import { InterviewService } from '../../core/services/interview.service';
 })
 export class LandingComponent implements OnInit {
   private readonly interviewService = inject(InterviewService);
+  readonly auth = inject(AuthService);
   readonly latest = signal<InterviewSummary[]>([]);
 
   ngOnInit(): void {
