@@ -158,8 +158,13 @@ import { InterviewService } from '../../core/services/interview.service';
       .owner-actions { display: flex; gap: 8px; }
       .badges, .actions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
       .views { display: inline-flex; align-items: center; gap: 4px; color: rgba(0, 0, 0, 0.6); }
-      .ai { background: #f3f0ff; margin: 16px 0; }
-      .ai mat-card-title { display: flex; align-items: center; gap: 6px; }
+      .ai {
+        margin: 16px 0;
+        background: linear-gradient(135deg, #e8f1ff 0%, #f4f8ff 100%) !important;
+        border: 1px solid rgba(21, 101, 192, 0.18) !important;
+      }
+      .ai mat-card-title { display: flex; align-items: center; gap: 6px; color: #0d47a1; }
+      .ai mat-icon { color: #1976d2; }
       .section { margin-bottom: 12px; }
       .q { display: flex; align-items: center; gap: 10px; padding: 6px 0; }
       .comment-form { display: flex; gap: 12px; align-items: baseline; margin: 12px 0; }

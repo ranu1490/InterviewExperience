@@ -66,21 +66,47 @@ import { InterviewService } from '../../core/services/interview.service';
     `
       .hero {
         text-align: center;
-        padding: 48px 16px 32px;
+        padding: 64px 24px 56px;
+        margin: -8px 0 32px;
+        border-radius: 20px;
+        color: #fff;
+        background: linear-gradient(135deg, #0d47a1 0%, #1565c0 45%, #1e88e5 100%);
+        box-shadow: 0 18px 44px rgba(21, 101, 192, 0.35);
+        position: relative;
+        overflow: hidden;
       }
+      /* Subtle decorative glow circles. */
+      .hero::before,
+      .hero::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.12);
+      }
+      .hero::before { width: 260px; height: 260px; top: -90px; right: -60px; }
+      .hero::after { width: 180px; height: 180px; bottom: -70px; left: -40px; }
       .hero h1 {
-        font-size: 2.2rem;
-        margin-bottom: 12px;
+        font-size: 2.4rem;
+        margin-bottom: 14px;
+        color: #fff;
+        position: relative;
       }
       .hero p {
-        max-width: 640px;
-        margin: 0 auto 24px;
-        color: rgba(0, 0, 0, 0.6);
+        max-width: 660px;
+        margin: 0 auto 26px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.05rem;
+        position: relative;
       }
       .hero-actions {
         display: flex;
         gap: 12px;
         justify-content: center;
+        position: relative;
+      }
+      .hero-actions a[mat-stroked-button] {
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.7);
       }
       .grid {
         display: grid;
