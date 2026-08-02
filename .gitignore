@@ -1,0 +1,16 @@
+# Build output
+**/target/
+dist/
+.angular/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Node
+node_modules/
+
+# Logs & OS
+*.log
+.DS_Store
