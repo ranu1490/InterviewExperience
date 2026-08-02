@@ -1,4 +1,169 @@
-/* You can add global styles to this file, and also import other style files */
+/* ============================================================================
+   Global blue & white theme for the Interview Experience Portal.
+   A calm, professional palette: deep/primary blues on soft white-blue surfaces,
+   with rounded cards, gentle shadows and hover lift for a "feel-good" UI.
+   ========================================================================== */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --iep-blue-900: #0d47a1;
+  --iep-blue-800: #1565c0;
+  --iep-blue-700: #1976d2;
+  --iep-blue-600: #1e88e5;
+  --iep-blue-500: #2196f3;
+  --iep-blue-100: #e3f0ff;
+  --iep-blue-50: #f4f8ff;
+
+  --iep-ink: #0f2748;
+  --iep-muted: #5b6b82;
+
+  --iep-surface: #ffffff;
+  --iep-radius: 14px;
+  --iep-shadow-sm: 0 1px 3px rgba(15, 39, 72, 0.08), 0 1px 2px rgba(15, 39, 72, 0.06);
+  --iep-shadow-md: 0 6px 20px rgba(21, 101, 192, 0.12);
+  --iep-shadow-lg: 0 14px 40px rgba(21, 101, 192, 0.18);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: var(--iep-ink);
+  /* Soft blue-tinted backdrop so white cards pop. */
+  background:
+    radial-gradient(1200px 600px at 100% -10%, #dcebff 0%, rgba(220, 235, 255, 0) 60%),
+    radial-gradient(1000px 500px at -10% 0%, #e8f1ff 0%, rgba(232, 241, 255, 0) 55%),
+    var(--iep-blue-50);
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--iep-ink);
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--iep-blue-700);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Toolbar --------------------------------------------------------------- */
+.mat-toolbar.app-toolbar {
+  background: linear-gradient(90deg, var(--iep-blue-900) 0%, var(--iep-blue-700) 55%, var(--iep-blue-600) 100%);
+  color: #fff;
+  box-shadow: var(--iep-shadow-md);
+}
+.mat-toolbar.app-toolbar a,
+.mat-toolbar.app-toolbar .mdc-button__label {
+  color: #fff;
+}
+
+/* ---- Cards ----------------------------------------------------------------- */
+.mat-mdc-card {
+  border-radius: var(--iep-radius) !important;
+  border: 1px solid rgba(21, 101, 192, 0.08);
+  box-shadow: var(--iep-shadow-sm) !important;
+  background: var(--iep-surface);
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+/* Clickable list/landing cards get a clear hover lift. */
+.mat-mdc-card.card:hover {
+  box-shadow: var(--iep-shadow-lg) !important;
+  transform: translateY(-3px);
+  border-color: rgba(21, 101, 192, 0.25);
+}
+.mat-mdc-card-title {
+  color: var(--iep-blue-900);
+  font-weight: 600;
+}
+.mat-mdc-card-subtitle {
+  color: var(--iep-muted);
+}
+
+/* ---- Buttons --------------------------------------------------------------- */
+.mat-mdc-raised-button,
+.mat-mdc-outlined-button,
+.mat-mdc-unelevated-button {
+  border-radius: 10px !important;
+  letter-spacing: 0.01em;
+}
+.mat-mdc-raised-button.mat-primary {
+  box-shadow: 0 4px 14px rgba(21, 101, 192, 0.35) !important;
+}
+
+/* ---- Chips (default = soft blue pills) ------------------------------------- */
+.mat-mdc-standard-chip {
+  --mdc-chip-container-shape-radius: 999px;
+  border-radius: 999px !important;
+}
+.mat-mdc-standard-chip:not(.diff-easy):not(.diff-medium):not(.diff-hard) {
+  background: var(--iep-blue-100) !important;
+}
+.mat-mdc-standard-chip:not(.diff-easy):not(.diff-medium):not(.diff-hard)
+  .mdc-evolution-chip__text-label {
+  color: var(--iep-blue-800) !important;
+  font-weight: 500;
+}
+
+/* Difficulty chips keep semantic colours. */
+.diff-easy { background: #d7f3dc !important; }
+.diff-easy .mdc-evolution-chip__text-label { color: #1b7a35 !important; font-weight: 600; }
+.diff-medium { background: #fdeecb !important; }
+.diff-medium .mdc-evolution-chip__text-label { color: #9a6a00 !important; font-weight: 600; }
+.diff-hard { background: #fbdce0 !important; }
+.diff-hard .mdc-evolution-chip__text-label { color: #b3253a !important; font-weight: 600; }
+
+/* ---- Form fields ----------------------------------------------------------- */
+.mat-mdc-form-field {
+  --mdc-outlined-text-field-focus-outline-color: var(--iep-blue-700);
+}
+
+/* ---- Tables ---------------------------------------------------------------- */
+.mat-mdc-table {
+  border-radius: var(--iep-radius);
+  overflow: hidden;
+  background: var(--iep-surface);
+}
+.mat-mdc-header-row {
+  background: var(--iep-blue-100);
+}
+.mat-mdc-header-cell {
+  color: var(--iep-blue-900);
+  font-weight: 600;
+}
+
+/* ---- Paginator ------------------------------------------------------------- */
+.mat-mdc-paginator {
+  background: transparent !important;
+  color: var(--iep-muted);
+}
+
+/* ---- Snackbar accent ------------------------------------------------------- */
+.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: var(--iep-blue-900);
+  --mat-snack-bar-button-color: #9ecbff;
+}
+
+/* ---- Nicer scrollbar ------------------------------------------------------- */
+* {
+  scrollbar-color: var(--iep-blue-500) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(33, 150, 243, 0.45);
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(33, 150, 243, 0.7);
+}
